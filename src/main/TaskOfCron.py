@@ -19,10 +19,11 @@ def readYaml():
     return configDict
 
 
-print readYaml()
-scheduler = BlockingScheduler()
-scheduler.add_job(job, 'cron', second=readYaml()['pl-a-batch'], hour='*')
-try:
-    scheduler.start()
-except(KeyboardInterrupt, SystemExit):
-    scheduler.shutdown()
+if __name__ == '__main__':
+    print readYaml()
+    scheduler = BlockingScheduler()
+    scheduler.add_job(job, 'cron', second=readYaml()['pl-a-batch'], hour='*')
+    try:
+        scheduler.start()
+    except(KeyboardInterrupt, SystemExit):
+        scheduler.shutdown()
