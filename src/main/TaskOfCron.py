@@ -1,7 +1,8 @@
 import os
+
 import yaml
-import urllib2
 from apscheduler.schedulers.blocking import BlockingScheduler
+from urllib2
 
 DEFAULT_PATH = "../resources/"
 
